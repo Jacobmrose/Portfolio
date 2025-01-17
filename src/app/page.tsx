@@ -1,7 +1,9 @@
-export default function HomePage() {
+import Hero from './sections/Hero'
+
+export default function Page() {
   return (
-    <div className='text-center'>
-      <h1 className='text-4xl font-bold'>Jacob Rose&apos;s Portfolio</h1>
-    </div>
+    <main className='max-w-7-xl mx-auto'>
+      <Hero />
+    </main>
   )
 }

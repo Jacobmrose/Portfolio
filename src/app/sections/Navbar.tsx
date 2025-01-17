@@ -1,10 +1,20 @@
-// app/components/Navbar.tsx
 'use client'
 
 import { useState } from 'react'
+import { navLinks } from '../constants'
 
-const NavItems = () => {
-  return <ul className='nav-ul'></ul>
+const NavItems: React.FC = () => {
+  return (
+    <ul className='nav-ul font-mono'>
+      {navLinks.map(({ id, href, name }) => (
+        <li key={id} className='nav-li'>
+          <a href={href} className='nav-li_a' onClick={() => {}}>
+            {name}
+          </a>
+        </li>
+      ))}
+    </ul>
+  )
 }
 
 const Navbar = () => {
@@ -18,7 +28,7 @@ const Navbar = () => {
         <div className='flex justify-between items-center py-5 mx-auto sm:px-10 px-5'>
           <a
             href='/'
-            className='text-neutral-400 font-bold text-xl hover:text-white transition-colors'
+            className='text-neutral-400 font-bold text-xl hover:text-white transition-colors font-mono'
           >
             Jacob
           </a>
@@ -37,6 +47,12 @@ const Navbar = () => {
             <NavItems />
           </nav>
         </div>
+      </div>
+      {/* Mobile Nav */}
+      <div className={`nav-sidebar ${isOpen ? 'max-h-screen' : 'max-h-0'}`}>
+        <nav className='p-5'>
+          <NavItems />
+        </nav>
       </div>
     </header>
   )
