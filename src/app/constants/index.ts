@@ -246,42 +246,53 @@ export const myProjects = [
   },
 ]
 
+type Vector3 = [number, number, number]
+
+interface Sizes {
+  deskScale: number
+  deskPosition: Vector3
+  cubePosition: Vector3
+  reactLogoPosition: Vector3
+  ringPosition: Vector3
+  targetPosition: Vector3
+}
+
 export const calculateSizes = (
   isSmall: boolean,
   isMobile: boolean,
   isTablet: boolean
-) => {
+): Sizes => {
   return {
     deskScale: isSmall ? 0.05 : isMobile ? 0.06 : 0.065,
     deskPosition: isMobile ? [0.5, -4.5, 0] : [0.25, -5.5, 0],
     cubePosition: isSmall
-      ? [4, -5, 0]
+      ? [3, -6.5, -1]
       : isMobile
-      ? [5, -5, 0]
+      ? [5, -6.5, 0]
       : isTablet
-      ? [5, -5, 0]
-      : [9, -5.5, 0],
+      ? [5, -6.5, 0]
+      : [9, -6.5, 0],
     reactLogoPosition: isSmall
-      ? [3, 4, 0]
+      ? [3, 2, 0]
       : isMobile
-      ? [5, 4, 0]
+      ? [4, 2, 0]
       : isTablet
-      ? [5, 4, 0]
-      : [12, 3, 0],
+      ? [5, 2, 0]
+      : [10, 2, 0],
     ringPosition: isSmall
-      ? [-5, 7, 0]
+      ? [-8, 7, 0]
       : isMobile
-      ? [-10, 10, 0]
+      ? [-16, 7, 0]
       : isTablet
-      ? [-12, 10, 0]
-      : [-24, 10, 0],
+      ? [-22, 7, 0]
+      : [-32, 7, 0],
     targetPosition: isSmall
-      ? [-5, -10, -10]
+      ? [-4, -10, -7]
       : isMobile
-      ? [-9, -10, -10]
+      ? [-6, -10, -7]
       : isTablet
-      ? [-11, -7, -10]
-      : [-13, -13, -10],
+      ? [-7, -10, -7]
+      : [-12, -10, -7],
   }
 }
 
