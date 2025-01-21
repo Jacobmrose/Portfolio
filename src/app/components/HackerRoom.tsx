@@ -1,7 +1,8 @@
+'use client'
 import React from 'react'
 import { useGLTF, useTexture } from '@react-three/drei'
 import { GroupProps } from '@react-three/fiber'
-import * as THREE from 'three' // Import THREE namespace
+import * as THREE from 'three'
 
 interface ModelProps extends GroupProps {
   scale?: number | [number, number, number]
@@ -19,8 +20,7 @@ interface GLTFModel extends THREE.Group {
   }
 }
 
-export default function HackerRoom(props: ModelProps) {
-  // Cast the return type of useGLTF to GLTFModel to match your expected structure
+export default function HackerRoom({ ...props }: ModelProps) {
   const { nodes, materials } = useGLTF(
     'models/scene.gltf'
   ) as unknown as GLTFModel
