@@ -1,4 +1,3 @@
-// app/layout.tsx
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import './globals.css'
@@ -27,9 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased h-screen flex items-center justify-center`}
-      >
+      <body className='antialiased h-screen flex items-center justify-center font-mono'>
         <Navbar />
         {children}
       </body>

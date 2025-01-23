@@ -9,7 +9,7 @@
 }
 
 body {
-  background: #010103;
+  background: #000000;
   font-family: 'General Sans', sans-serif;
 }
 
@@ -44,7 +44,7 @@ body {
 
   /* button component */
   .btn {
-    @apply flex gap-4 items-center justify-center cursor-pointer p-3 rounded-md bg-gray-900  transition-all active:scale-95 text-white mx-auto;
+    @apply flex gap-4 items-center justify-center cursor-pointer p-3 rounded-md bg-gray-800  transition-all active:scale-95 text-white mx-auto;
   }
 
   .btn-ping {
