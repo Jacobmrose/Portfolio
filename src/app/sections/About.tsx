@@ -26,7 +26,7 @@ const About = () => {
               alt='grid-1'
               className='w-full h-auto sm:h-[276px] object-contain mb-6'
             />
-            <p className='grid-headtext text-center'>Hi, I am Jacob</p>
+            <p className='grid-headtext text-center'>Hi, I'm Jacob</p>
             <p className='grid-subtext text-center'>
               In just over a year of dedicated learning, I’ve developed a strong
               foundation in frontend development and a passion for crafting

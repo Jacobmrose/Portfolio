@@ -1,69 +1,35 @@
 'use client'
-import React, { Suspense, useRef } from 'react'
-import { PerspectiveCamera } from '@react-three/drei'
-import { Canvas } from '@react-three/fiber'
-import HackerRoom from '../components/HackerRoom'
-import CanvasLoader from '../components/CanvasLoader'
-import { useMediaQuery } from 'react-responsive'
-import { calculateSizes } from '../constants'
-import Target from '../components/Target'
-import ReactLogo from '../components/ReactLogo'
-import Cube from '../components/Cube'
-import Rings from '../components/Rings'
-import HeroCamera from '../components/HeroCamera'
-import * as THREE from 'three'
+import React from 'react'
+import ComputersCanvas from '../components/Computer'
 import Button from '../components/Button'
 
 const Hero = () => {
-  const isSmall = useMediaQuery({ maxWidth: 440 })
-  const isMobile = useMediaQuery({ maxWidth: 768 })
-  const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024 })
-  const sizes = calculateSizes(isSmall, isMobile, isTablet)
-
-  // Create the groupRef for HackerRoom, but only pass it to HeroCamera
-  const groupRef = useRef<THREE.Group>(null)
-
   return (
-    <section className='min-h-screen w-full flex flex-col relative'>
-      <div className='w-full mx-auto flex flex-col sm:mt-36 mt-20 c-space gap-3'>
-        <p className='sm:text-2xl text-xl font-medium text-white text-center font-mono'>
-          Hi, I am Jacob <span className='waving-hand'>👋</span>
-        </p>
-        <p className='hero_tag text-gray_gradient'>
-          Scalable. Reliable. Modern.
-        </p>
-        <div className='w-full h-full absolute inset-0'>
-          <Canvas className='w-full h-full'>
-            <Suspense fallback={<CanvasLoader />}>
-              <PerspectiveCamera makeDefault position={[0, 0, 20]} />
-              {/* HeroCamera handles rotation */}
-              <HeroCamera isMobile={isMobile} groupRef={groupRef}>
-                <HackerRoom
-                  position={sizes.deskPosition}
-                  rotation={[0, -Math.PI, 0]} // You can adjust rotation here if needed
-                  scale={sizes.deskScale}
-                />
-              </HeroCamera>
-              <group>
-                <Target position={sizes.targetPosition} />
-                <ReactLogo position={sizes.reactLogoPosition} />
-                <Cube position={sizes.cubePosition} />
-                <Rings position={sizes.ringPosition} />
-              </group>
-              <ambientLight intensity={1} />
-              <directionalLight position={[10, 10, 10]} intensity={0.5} />
-            </Suspense>
-          </Canvas>
+    <section className='relative w-full h-screen flex flex-col items-center justify-center'>
+      {/* Header Text */}
+      <div className='absolute top-[120px] max-w-7xl mx-auto flex flex-row items-start gap-5'>
+        <div className='flex flex-col justify-center items-center mt-5'></div>
+        <div>
+          <h1 className='text-white font-bold mt-12 text-4xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl whitespace-nowrap'>
+            Hi, I'm <span className='text-[#915EFF]'>Jacob</span>
+          </h1>
         </div>
-        <div className='absolute bottom-7 left-0 right-0 w-full z-10 c-space'>
-          <a href='/contact' className='w-fit'>
-            <Button
-              name="Let's work together !"
-              isBeam
-              containerClass='sm:w-fit w-full sm:min-w-96'
-            />
-          </a>
-        </div>
+      </div>
+
+      {/* 3D Model */}
+      <div className='absolute inset-0'>
+        <ComputersCanvas />
+      </div>
+
+      {/* Call-to-Action Button */}
+      <div className='absolute bottom-7 left-0 right-0 flex justify-center z-10'>
+        <a href='/contact' className='w-fit'>
+          <Button
+            name="Let's work together !"
+            isBeam
+            containerClass='sm:w-fit w-full sm:min-w-96'
+          />
+        </a>
       </div>
     </section>
   )

@@ -2,7 +2,7 @@ export const navLinks = [
   {
     id: 1,
     name: 'Home',
-    href: '/home',
+    href: '/',
   },
   {
     id: 2,
@@ -11,8 +11,8 @@ export const navLinks = [
   },
   {
     id: 3,
-    name: 'Work',
-    href: '/work',
+    name: 'Projects',
+    href: '/projects',
   },
   {
     id: 4,
@@ -257,44 +257,44 @@ interface Sizes {
   targetPosition: Vector3
 }
 
-export const calculateSizes = (
-  isSmall: boolean,
-  isMobile: boolean,
-  isTablet: boolean
-): Sizes => {
-  return {
-    deskScale: isSmall ? 0.05 : isMobile ? 0.06 : 0.065,
-    deskPosition: isMobile ? [0.5, -4.5, 0] : [0.25, -5.5, 0],
-    cubePosition: isSmall
-      ? [3, -6.5, -1]
-      : isMobile
-      ? [5, -6.5, 0]
-      : isTablet
-      ? [5, -6.5, 0]
-      : [9, -6.5, 0],
-    reactLogoPosition: isSmall
-      ? [3, 2, 0]
-      : isMobile
-      ? [4, 2, 0]
-      : isTablet
-      ? [5, 2, 0]
-      : [10, 2, 0],
-    ringPosition: isSmall
-      ? [-8, 7, 0]
-      : isMobile
-      ? [-16, 7, 0]
-      : isTablet
-      ? [-22, 7, 0]
-      : [-32, 7, 0],
-    targetPosition: isSmall
-      ? [-4, -10, -7]
-      : isMobile
-      ? [-6, -10, -7]
-      : isTablet
-      ? [-7, -10, -7]
-      : [-12, -10, -7],
-  }
-}
+// export const calculateSizes = (
+//   isSmall: boolean,
+//   isMobile: boolean,
+//   isTablet: boolean
+// ): Sizes => {
+//   return {
+//     deskScale: isSmall ? 0.05 : isMobile ? 0.06 : 0.065,
+//     deskPosition: isMobile ? [0.5, -4.5, 0] : [0.25, -5.5, 0],
+//     cubePosition: isSmall
+//       ? [3, -6.5, -1]
+//       : isMobile
+//       ? [5, -6.5, 0]
+//       : isTablet
+//       ? [5, -6.5, 0]
+//       : [9, -6.5, 0],
+//     reactLogoPosition: isSmall
+//       ? [3, 2, 0]
+//       : isMobile
+//       ? [4, 2, 0]
+//       : isTablet
+//       ? [5, 2, 0]
+//       : [10, 2, 0],
+//     ringPosition: isSmall
+//       ? [-8, 7, 0]
+//       : isMobile
+//       ? [-16, 7, 0]
+//       : isTablet
+//       ? [-22, 7, 0]
+//       : [-32, 7, 0],
+//     targetPosition: isSmall
+//       ? [-4, -10, -7]
+//       : isMobile
+//       ? [-6, -10, -7]
+//       : isTablet
+//       ? [-7, -10, -7]
+//       : [-12, -10, -7],
+//   }
+// }
 
 export const workExperiences = [
   {
