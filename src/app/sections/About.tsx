@@ -37,9 +37,9 @@ const About = () => {
             />
             <p className='grid-headtext text-center'>Hi, I'm Jacob</p>
             <p className='grid-subtext text-center'>
-              In just over a year of dedicated learning, I’ve developed a strong
-              foundation in frontend development and a passion for crafting
-              modern, responsive web solutions.
+              Since 2023, I’ve developed a strong foundation in frontend
+              development and a passion for crafting modern, responsive web
+              solutions.
             </p>
           </div>
         </div>
@@ -144,6 +144,7 @@ const About = () => {
           </div>
         </div>
       </div>
+      <div id='projects'></div>
     </section>
   )
 }

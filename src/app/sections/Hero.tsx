@@ -5,7 +5,10 @@ import Button from '../components/Button'
 
 const Hero = () => {
   return (
-    <section className='relative w-full h-screen flex flex-col items-center justify-center'>
+    <section
+      className='relative w-full h-screen flex flex-col items-center justify-center'
+      id='home'
+    >
       {/* Header Text */}
       <div className='absolute top-[120px] max-w-7xl mx-auto flex flex-row items-start gap-5'>
         <div className='flex flex-col justify-center items-center mt-5'></div>

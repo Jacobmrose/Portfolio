@@ -2,7 +2,7 @@ export const navLinks = [
   {
     id: 1,
     name: 'Home',
-    href: '/',
+    href: '#home',
   },
   {
     id: 2,
@@ -24,35 +24,35 @@ export const navLinks = [
 export const clientReviews = [
   {
     id: 1,
-    name: 'Emily Johnson',
-    position: 'Marketing Director at GreenLeaf',
+    name: 'Sophia Reynolds',
+    position: 'Creative Director at Lumino Media',
     img: 'assets/review1.png',
     review:
-      'Working with Adrian was a fantastic experience. He transformed our outdated website into a modern, user-friendly platform. His attention to detail and commitment to quality are unmatched. Highly recommend him for any web dev projects.',
+      'Collaborating with Jacob was seamless. His ability to understand our vision and turn it into a dynamic website was truly remarkable. The final product was beyond what we imagined! (This is placeholder filler information and does not represent real feedback.)',
   },
   {
     id: 2,
-    name: 'Mark Rogers',
-    position: 'Founder of TechGear Shop',
+    name: 'Michael Thompson',
+    position: 'Owner of Apex Outdoors',
     img: 'assets/review2.png',
     review:
-      'Adrian’s expertise in web development is truly impressive. He delivered a robust and scalable solution for our e-commerce site, and our online sales have significantly increased since the launch. He’s a true professional! Fantastic work.',
+      'Jacob completely revamped our online presence, and the feedback from our customers has been phenomenal. His professionalism and innovative ideas made all the difference. (This is placeholder filler information and does not represent real feedback.)',
   },
   {
     id: 3,
-    name: 'John Dohsas',
-    position: 'Project Manager at UrbanTech ',
+    name: 'Jeff Michaels',
+    position: 'Operations Manager at FutureVision',
     img: 'assets/review3.png',
     review:
-      'I can’t say enough good things about Adrian. He was able to take our complex project requirements and turn them into a seamless, functional website. His problem-solving abilities are outstanding.',
+      'Jacob delivered a flawless website under a tight deadline. His technical expertise and collaborative approach made the process so easy. Highly recommend his services! (This is placeholder filler information and does not represent real feedback.)',
   },
   {
     id: 4,
-    name: 'Ether Smith',
-    position: 'CEO of BrightStar Enterprises',
+    name: 'Ryan Patel',
+    position: 'Co-Founder of Summit Ventures',
     img: 'assets/review4.png',
     review:
-      'Adrian was a pleasure to work with. He understood our requirements perfectly and delivered a website that exceeded our expectations. His skills in both frontend backend dev are top-notch.',
+      'From start to finish, Jacob impressed us with his creativity and technical skills. The website not only looks stunning but performs exceptionally well. We couldn’t be happier! (This is placeholder filler information and does not represent real feedback.)',
   },
 ]
 
