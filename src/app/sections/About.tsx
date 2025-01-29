@@ -97,7 +97,15 @@ const About = () => {
               <p className='grid-subtext'>
                 Based in Florida, I offer flexible remote work opportunities.
               </p>
-              <Button name='Contact Me' isBeam containerClass='w-full mt-10' />
+              <Button
+                name='Contact Me'
+                isBeam
+                containerClass='w-full mt-10'
+                onClick={() => {
+                  const contactSection = document.querySelector('#contact')
+                  contactSection?.scrollIntoView({ behavior: 'smooth' })
+                }}
+              />
             </div>
           </div>
         </div>

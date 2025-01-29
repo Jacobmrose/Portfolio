@@ -1,10 +1,14 @@
 'use client'
 import { useRef, useState } from 'react'
+import emailjs from '@emailjs/browser'
 
 const Contact = () => {
   const formRef = useRef<HTMLFormElement>(null)
 
   const [loading, setLoading] = useState(false)
+  const [showModal, setShowModal] = useState(false)
+  const [modalMessage, setModalMessage] = useState('')
+  const [modalType, setModalType] = useState<'success' | 'error'>('success') // ✅ Define modalType
 
   const [form, setForm] = useState({
     name: '',
@@ -22,21 +26,44 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setLoading(true)
-
-    // Simulate form submission (replace this with your actual backend logic)
-    setTimeout(() => {
-      alert('Form submitted successfully!')
+    try {
+      await emailjs.send(
+        'service_4hopmui',
+        'template_q895y54',
+        {
+          from_name: form.name,
+          to_name: 'Jacob',
+          from_email: form.email,
+          to_email: 'jacobmrosedev@gmail.com',
+          message: form.message,
+        },
+        'qq9auw0L8FoqgvMY_'
+      )
       setLoading(false)
+
+      // ✅ Set success modal
+      setModalMessage('Your message has been successfully sent!')
+      setModalType('success')
+      setShowModal(true)
+
       setForm({
         name: '',
         email: '',
         message: '',
       })
-    }, 2000)
+    } catch (error) {
+      setLoading(false)
+      console.log(error)
+
+      // ❌ Set error modal
+      setModalMessage('Something went wrong!')
+      setModalType('error')
+      setShowModal(true)
+    }
   }
 
   return (
-    <section className='c-space my-20 pb-16'>
+    <section className='c-space my-20' id='contact'>
       <div className='relative min-h-screen flex items-center justify-center flex-col'>
         <img
           src='/assets/terminal.png'
@@ -106,6 +133,30 @@ const Contact = () => {
           </form>
         </div>
       </div>
+
+      {/* ✅ Custom Confirmation/Error Modal (Fixed `modalType`) */}
+      {showModal && (
+        <div className='fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50'>
+          <div className='bg-white p-6 rounded-lg shadow-lg w-96 text-center'>
+            <h2 className='text-xl font-bold text-gray-800'>
+              {modalType === 'success' ? 'Message Sent!' : 'Error!'}
+            </h2>
+            <p
+              className={`mt-2 ${
+                modalType === 'success' ? 'text-green-600' : 'text-red-600'
+              }`}
+            >
+              {modalMessage}
+            </p>
+            <button
+              className='mt-4 px-4 py-2 bg-gray-700 text-white rounded-md hover:bg-gray-800'
+              onClick={() => setShowModal(false)}
+            >
+              OK
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   )
 }
