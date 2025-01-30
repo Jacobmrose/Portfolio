@@ -12,10 +12,10 @@ const Footer = () => {
   }, [year])
 
   return (
-    <footer className='c-space pb-5 border-t border-black flex justify-between items-center flex-wrap gap-5'>
-      <p className='text-gray-300'>Built with ❤️ by Jacob Rose</p>
+    <footer className='c-space pb-5 pt-5 w-full bg-black flex justify-between items-center flex-wrap gap-5'>
+      <p className='text-gray-300 xl:ml-64'>Built with ❤️ by Jacob Rose</p>
 
-      <div className='flex gap-3'>
+      <div className='flex'>
         <a
           href='https://github.com/jacobmrose'
           target='_blank'
@@ -38,7 +38,7 @@ const Footer = () => {
         </a>
       </div>
 
-      <p className='text-gray-300'>© {year} | All rights reserved.</p>
+      <p className='text-gray-300 xl:mr-64'>© {year} | All rights reserved.</p>
     </footer>
   )
 }

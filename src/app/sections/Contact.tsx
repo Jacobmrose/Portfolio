@@ -64,23 +64,27 @@ const Contact = () => {
 
   return (
     <section className='c-space my-20' id='contact'>
-      <div className='relative min-h-screen flex items-center justify-center flex-col'>
+      <div className='relative flex flex-col min-h-screen items-center justify-center'>
+        {/* Background Image - Now Contained */}
         <img
           src='/assets/terminal.png'
           alt='terminal background'
-          className='absolute inset-0 min-h-screen'
+          className='absolute inset-0 w-full h-full object-cover max-w-[1950px] mx-auto'
         />
-        <div className='contact-container'>
+
+        {/* Content */}
+        <div className='relative z-10 contact-container'>
           <h3 className='text-center head-text text-white mt-10'>Let's Talk</h3>
           <p className='text-lg text-gray-300 mt-3'>
             Whether it's creating something new, refining your current platform,
             or tackling a unique challenge, I'm here to bring your vision to
             life.
           </p>
+
           <form
             ref={formRef}
             onSubmit={handleSubmit}
-            className='mt-12 flex flex-col space-y-6'
+            className='mt-12 flex flex-col space-y-6 pb-6'
           >
             <label className='flex flex-col space-y-2'>
               <span className='field-label text-gray-300'>Full Name</span>
@@ -134,7 +138,7 @@ const Contact = () => {
         </div>
       </div>
 
-      {/* ✅ Custom Confirmation/Error Modal (Fixed `modalType`) */}
+      {/* Modal */}
       {showModal && (
         <div className='fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50'>
           <div className='bg-white p-6 rounded-lg shadow-lg w-96 text-center'>

@@ -92,7 +92,7 @@ body {
   }
 
   .client-review {
-    @apply rounded-lg md:p-10 p-5 col-span-1 bg-gray-900 bg-opacity-50;
+    @apply rounded-lg md:p-10 p-5 col-span-1 bg-gray-800 bg-opacity-50;
   }
 
   .client-content {
@@ -105,11 +105,11 @@ body {
   }
 
   .work-canvas {
-    @apply col-span-1 rounded-lg bg-gray-900 border border-black-300;
+    @apply col-span-1 rounded-lg bg-gray-900 border border-black;
   }
 
   .work-content {
-    @apply col-span-2 rounded-lg bg-gray-900 border border-black-300;
+    @apply col-span-2 rounded-lg bg-gray-900 border border-black;
   }
 
   .work-content_container {
