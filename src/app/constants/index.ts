@@ -16,6 +16,11 @@ export const navLinks = [
   },
   {
     id: 4,
+    name: 'Experience',
+    href: '#experience',
+  },
+  {
+    id: 5,
     name: 'Contact',
     href: '#contact',
   },
@@ -58,19 +63,19 @@ export const clientReviews = [
 
 export const myProjects = [
   {
-    title: 'Podcastr - AI Podcast Platform',
-    desc: 'Podcastr is a revolutionary Software-as-a-Service platform that transforms the way podcasts are created. With advanced AI-powered features like text-to-multiple-voices functionality, it allows creators to generate diverse voiceovers from a single text input.',
+    title: 'Chess Fein - Advanced Chess Training Platform',
+    desc: 'Chess Fein offers an advanced chess training experience, featuring player vs. AI matches with adjustable Stockfish Elo levels from 1320 to 3190, a comprehensive library of 20,000 unique puzzles spanning 50+ themes, and 12 structured learning modules designed to guide beginners through fundamental concepts and strategies.',
     subdesc:
-      'Built as a unique Software-as-a-Service app with Next.js 14, Tailwind CSS, TypeScript, Framer Motion and Convex, Podcastr is designed for optimal performance and scalability.',
-    href: 'https://www.youtube.com/watch?v=zfAb95tJvZQ',
+      'Developed with Next.js, Tailwind CSS, and TypeScript, Chess Fein provides a seamless and responsive user experience for chess enthusiasts aiming to elevate their game.',
+    href: 'https://chess-fein.vercel.app/',
     texture: '/textures/project/project1.mp4',
-    logo: '/assets/project-logo1.png',
+    logo: '/assets/chess-fein.png',
     logoStyle: {
-      backgroundColor: '#2A1816',
-      border: '0.2px solid #36201D',
-      boxShadow: '0px 0px 60px 0px #AA3C304D',
+      backgroundColor: '#581c87',
+      border: '0.2px solid black',
+      boxShadow: '0px 0px 60px 0px black',
     },
-    spotlight: '/assets/spotlight1.png',
+    spotlight: '/assets/spotlight5.png',
     tags: [
       {
         id: 1,
@@ -86,11 +91,6 @@ export const myProjects = [
         id: 3,
         name: 'TypeScript',
         path: '/assets/typescript.png',
-      },
-      {
-        id: 4,
-        name: 'Framer Motion',
-        path: '/assets/framer.png',
       },
     ],
   },
@@ -123,11 +123,6 @@ export const myProjects = [
         id: 3,
         name: 'TypeScript',
         path: '/assets/typescript.png',
-      },
-      {
-        id: 4,
-        name: 'Framer Motion',
-        path: '/assets/framer.png',
       },
     ],
   },
@@ -163,11 +158,6 @@ export const myProjects = [
         name: 'TypeScript',
         path: '/assets/typescript.png',
       },
-      {
-        id: 4,
-        name: 'Framer Motion',
-        path: '/assets/framer.png',
-      },
     ],
   },
   {
@@ -200,11 +190,6 @@ export const myProjects = [
         name: 'TypeScript',
         path: '/assets/typescript.png',
       },
-      {
-        id: 4,
-        name: 'Framer Motion',
-        path: '/assets/framer.png',
-      },
     ],
   },
   {
@@ -236,11 +221,6 @@ export const myProjects = [
         id: 3,
         name: 'TypeScript',
         path: '/assets/typescript.png',
-      },
-      {
-        id: 4,
-        name: 'Framer Motion',
-        path: '/assets/framer.png',
       },
     ],
   },

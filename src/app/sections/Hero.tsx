@@ -31,6 +31,7 @@ const Hero = () => {
             name="Let's work together"
             isBeam
             containerClass='sm:w-fit w-full sm:min-w-96'
+            onClick={() => null}
           />
         </a>
       </div>

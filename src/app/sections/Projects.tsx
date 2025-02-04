@@ -120,6 +120,7 @@ const Projects = () => {
           </Canvas>
         </div>
       </div>
+      <div id='experience'></div>
     </section>
   )
 }

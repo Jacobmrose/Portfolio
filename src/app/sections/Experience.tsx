@@ -49,7 +49,11 @@ const WorkExperience = () => {
               <ambientLight intensity={7} />
               <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
               <directionalLight position={[10, 10, 10]} intensity={1} />
-              <OrbitControls enableZoom={false} maxPolarAngle={Math.PI / 2.7} />
+              <OrbitControls
+                enableZoom={false}
+                enablePan={false}
+                maxPolarAngle={Math.PI / 2.7}
+              />
 
               <Suspense fallback={<CanvasLoader />}>
                 <Developer
