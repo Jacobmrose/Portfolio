@@ -92,7 +92,7 @@ const WorkExperience = () => {
                     <p className='text-sm mb-5 text-gray-300'>
                       {item.pos} -- <span>{item.duration}</span>
                     </p>
-                    <p className='group-hover:text-white transition-all ease-in-out duration-500'>
+                    <p className='text-gray-500 group-hover:text-white transition-all ease-in-out duration-500'>
                       {item.title}
                     </p>
                   </div>
