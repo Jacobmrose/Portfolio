@@ -97,7 +97,7 @@ const Projects = () => {
             </button>
           </div>
         </div>
-        <div className='border border-black-300 bg-gray-950 rounded-lg h-96 md:h-full'>
+        <div className='border-gray-900 border-2 rounded-lg h-96 md:h-full'>
           <Canvas>
             <ambientLight intensity={Math.PI} />
             <directionalLight position={[10, 10, 5]} />

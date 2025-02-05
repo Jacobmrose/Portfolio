@@ -5,6 +5,9 @@ import Navbar from './sections/Navbar'
 export const metadata: Metadata = {
   title: "Jacob Rose's Portfolio",
   description: 'React, Typescript, Nextjs, THREEjs, Tailwindcss',
+  icons: {
+    icon: '/favicon.ico',
+  },
 }
 
 export default function RootLayout({
