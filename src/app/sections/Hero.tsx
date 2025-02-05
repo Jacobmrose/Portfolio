@@ -14,7 +14,7 @@ const Hero = () => {
         <div className='flex flex-col justify-center items-center mt-5'></div>
         <div>
           <h1 className='text-white font-bold mt-12 text-4xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl whitespace-nowrap font-mono'>
-            Hi, I'm <span className='text-[#915EFF]'>Jacob</span>
+            Hi, I&apos;m <span className='text-[#915EFF]'>Jacob</span>
           </h1>
         </div>
       </div>

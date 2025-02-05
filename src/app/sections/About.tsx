@@ -1,5 +1,6 @@
 'use client'
 import dynamic from 'next/dynamic'
+import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
 import Button from '../components/Button'
 
@@ -30,12 +31,14 @@ const About = () => {
         {/* First Section */}
         <div className='col-span-1 xl:row-span-3'>
           <div className='grid-container'>
-            <img
+            <Image
               src='/assets/grid1.png'
               alt='grid-1'
+              width={500}
+              height={276}
               className='w-full h-auto sm:h-[276px] object-contain mb-6'
             />
-            <p className='grid-headtext text-center'>Hi, I'm Jacob</p>
+            <p className='grid-headtext text-center'>Hi, I&apos;m Jacob</p>
             <p className='grid-subtext text-center'>
               Since 2023, I’ve developed a strong foundation in frontend
               development and a passion for crafting modern, responsive web
@@ -47,9 +50,11 @@ const About = () => {
         {/* Second Section */}
         <div className='col-span-1 xl:row-span-3 flex flex-col justify-center items-center grid-container'>
           <div className='w-full flex justify-center items-center'>
-            <img
+            <Image
               src='/assets/grid2.png'
               alt='grid-2'
+              width={276}
+              height={276}
               className='w-full sm:w-[276px] h-auto object-contain mb-6'
             />
           </div>
@@ -119,30 +124,34 @@ const About = () => {
             <div>
               <p className='grid-headtext'>Why I Code</p>
               <p className='grid-subtext'>
-                Coding isn’t just my profession; it’s my passion. From a young
-                age, I’ve been fascinated by how technology solves real-world
-                problems. For me, it’s about creating impactful solutions that
-                improve people’s lives. I love turning ideas into products and
-                finding ways to push the limits of what technology can achieve.
-                Coding is both my craft and my way to connect with the world,
-                shaping the future through innovation.
+                Coding isn&apos;t just my profession; it&apos;s my passion. From
+                a young age, I&apos;ve been fascinated by how technology solves
+                real-world problems. For me, it&apos;s about creating impactful
+                solutions that improve people&apos;s lives. I love turning ideas
+                into products and finding ways to push the limits of what
+                technology can achieve. Coding is both my craft and my way to
+                connect with the world, shaping the future through innovation.
               </p>
             </div>
           </div>
         </div>
         <div className='xl:col-span-1 xl:row-span-2'>
           <div className='grid-container'>
-            <img
-              src='assets/grid4.png'
+            <Image
+              src='/assets/grid4.png'
               alt='grid-4'
+              width={500}
+              height={276}
               className='w-full md:h-[126px] sm:h-[276px] h-fit object-cover sm:object-top'
             />
             <div className='space-y-2'>
               <p className='grid-subtext text-center'>Email me</p>
               <div className='copy-container' onClick={handleCopy}>
-                <img
+                <Image
                   src={hasCopied ? 'assets/tick.svg' : 'assets/copy.svg'}
                   alt='copy'
+                  width={24}
+                  height={24}
                 />
                 <p className='lg:text-2xl md:text-xl font-medium text-gray_gradient text-white'>
                   jacobmrosedev@gmail.com

@@ -1,5 +1,6 @@
 'use client'
 import { useEffect, useState } from 'react'
+import Image from 'next/image'
 
 const Footer = () => {
   const [year, setYear] = useState(new Date().getFullYear())
@@ -22,7 +23,7 @@ const Footer = () => {
           rel='noopener noreferrer'
           className='social-icon'
         >
-          <img src='/assets/github.svg' alt='GitHub' className='w-6 h-6' />
+          <Image src='/assets/github.svg' alt='GitHub' width={24} height={24} />
         </a>
         <a
           href='https://instagram.com/jacobmrose'
@@ -30,10 +31,11 @@ const Footer = () => {
           rel='noopener noreferrer'
           className='social-icon'
         >
-          <img
+          <Image
             src='/assets/instagram.svg'
             alt='Instagram'
-            className='w-6 h-6'
+            width={24}
+            height={24}
           />
         </a>
       </div>

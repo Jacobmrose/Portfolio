@@ -3,6 +3,7 @@
 import { Suspense, useState } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
+import Image from 'next/image'
 
 import Developer from '../components/Developer'
 import CanvasLoader from '../components/Loading'
@@ -29,8 +30,6 @@ const experiences: WorkExperienceItem[] = workExperiences.map((item) => ({
 
 const WorkExperience = () => {
   const [animationName, setAnimationName] = useState<AnimationName>('idle')
-
-  // Function to safely update animation state
   const handleSetAnimation = (animation: string) => {
     const validAnimation = animation.toLowerCase() as AnimationName
     if (['idle', 'victory', 'clapping', 'salute'].includes(validAnimation)) {
@@ -42,7 +41,6 @@ const WorkExperience = () => {
     <section className='c-space my-20' id='work'>
       <div className='w-full text-white-600'>
         <p className='head-text text-center'>My Work Experience</p>
-
         <div className='work-container'>
           <div className='work-canvas'>
             <Canvas>
@@ -77,10 +75,12 @@ const WorkExperience = () => {
                 >
                   <div className='flex flex-col h-full justify-start items-center py-2'>
                     <div className='work-content_logo'>
-                      <img
-                        className=' bg-white'
+                      <Image
+                        className='bg-white'
                         src={item.icon}
                         alt={item.name}
+                        width={50}
+                        height={50}
                       />
                     </div>
 

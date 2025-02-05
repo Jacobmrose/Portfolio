@@ -1,5 +1,6 @@
 'use client'
 import { Suspense, useState } from 'react'
+import Image from 'next/image'
 import { myProjects } from '../constants'
 import { Canvas } from '@react-three/fiber'
 import { Center, OrbitControls } from '@react-three/drei'
@@ -29,9 +30,12 @@ const Projects = () => {
       <div className='grid lg:grid-cols-2 grid-cols-1 mt-12 gap-5 w-full'>
         <div className='flex flex-col gap-5 relative sm:p-10 py-10 px-5 shadow-2xl shadow-black-200'>
           <div className='absolute top-0 right-0'>
-            <img
+            <Image
               src={currentProject.spotlight}
               alt='spotlight'
+              layout='responsive'
+              width={500}
+              height={384}
               className='w-full h-96 object-cover rounded-xl'
             />
           </div>
@@ -39,9 +43,11 @@ const Projects = () => {
             className='p-3 backdrop-filter backdrop-blur-3xl w-fit rounded-lg'
             style={currentProject.logoStyle}
           >
-            <img
+            <Image
               src={currentProject.logo}
               alt='logo'
+              width={40}
+              height={40}
               className='w-10 h-10 shadow-sm'
             />
           </div>
@@ -56,7 +62,7 @@ const Projects = () => {
             <div className='flex items-center gap-3'>
               {currentProject.tags.map((tag, index) => (
                 <div key={index} className='tech-logo'>
-                  <img src={tag.path} alt={tag.name} />
+                  <Image src={tag.path} alt={tag.name} width={24} height={24} />
                 </div>
               ))}
             </div>
@@ -67,9 +73,11 @@ const Projects = () => {
               rel='noreferrer'
             >
               <p>Check Live Site</p>
-              <img
+              <Image
                 src='/assets/arrow-up.png'
                 alt='arrow icon'
+                width={16}
+                height={16}
                 className='arrow up h-4 w-4'
               />
             </a>
@@ -77,21 +85,25 @@ const Projects = () => {
           <div className='flex justify-between items-center mt-7'>
             <button
               className='arrow-btn'
-              onClick={() => handleNavigation('previous')} // Updated the function call here
+              onClick={() => handleNavigation('previous')}
             >
-              <img
+              <Image
                 src='/assets/left-arrow.png'
                 alt='left arrow'
+                width={16}
+                height={16}
                 className='w-4 h-4'
               />
             </button>
             <button
               className='arrow-btn'
-              onClick={() => handleNavigation('next')} // Added next button
+              onClick={() => handleNavigation('next')}
             >
-              <img
+              <Image
                 src='/assets/right-arrow.png'
                 alt='right arrow'
+                width={16}
+                height={16}
                 className='w-4 h-4'
               />
             </button>

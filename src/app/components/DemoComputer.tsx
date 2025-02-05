@@ -8,7 +8,11 @@ interface GLTFModel {
   materials: Record<string, THREE.Material>
 }
 
-export default function DemoComputer(props: any) {
+interface DemoComputerProps {
+  texture?: string
+}
+
+export default function DemoComputer(props: DemoComputerProps) {
   const group = useRef<THREE.Group>(null)
   const { nodes, materials } = useGLTF(
     'models/computer.glb'

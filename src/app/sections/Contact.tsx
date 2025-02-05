@@ -1,6 +1,8 @@
 'use client'
+
 import { useRef, useState } from 'react'
 import emailjs from '@emailjs/browser'
+import Image from 'next/image'
 
 const Contact = () => {
   const formRef = useRef<HTMLFormElement>(null)
@@ -8,7 +10,7 @@ const Contact = () => {
   const [loading, setLoading] = useState(false)
   const [showModal, setShowModal] = useState(false)
   const [modalMessage, setModalMessage] = useState('')
-  const [modalType, setModalType] = useState<'success' | 'error'>('success') // ✅ Define modalType
+  const [modalType, setModalType] = useState<'success' | 'error'>('success')
 
   const [form, setForm] = useState({
     name: '',
@@ -41,7 +43,6 @@ const Contact = () => {
       )
       setLoading(false)
 
-      // ✅ Set success modal
       setModalMessage('Your message has been successfully sent!')
       setModalType('success')
       setShowModal(true)
@@ -55,7 +56,6 @@ const Contact = () => {
       setLoading(false)
       console.log(error)
 
-      // ❌ Set error modal
       setModalMessage('Something went wrong!')
       setModalType('error')
       setShowModal(true)
@@ -65,20 +65,21 @@ const Contact = () => {
   return (
     <section className='c-space my-20' id='contact'>
       <div className='relative flex flex-col min-h-screen items-center justify-center'>
-        {/* Background Image - Now Contained */}
-        <img
+        <Image
           src='/assets/terminal.png'
           alt='terminal background'
-          className='absolute inset-0 w-full h-full object-cover max-w-[1950px] mx-auto'
+          fill
+          style={{ objectFit: 'cover', maxWidth: '1950px', margin: '0 auto' }}
         />
 
-        {/* Content */}
         <div className='relative z-10 contact-container'>
-          <h3 className='text-center head-text text-white mt-10'>Let's Talk</h3>
+          <h3 className='text-center head-text text-white mt-10'>
+            Let&apos;s Talk
+          </h3>
           <p className='text-lg text-gray-300 mt-3'>
-            Whether it's creating something new, refining your current platform,
-            or tackling a unique challenge, I'm here to bring your vision to
-            life.
+            Whether it&apos;s creating something new, refining your current
+            platform, or tackling a unique challenge, I&apos;m here to bring
+            your vision to life.
           </p>
 
           <form
@@ -128,9 +129,11 @@ const Contact = () => {
               disabled={loading}
             >
               <span>{loading ? 'Sending...' : 'Send Message'}</span>
-              <img
+              <Image
                 src='/assets/arrow-up.png'
                 alt='arrow-up'
+                width={20}
+                height={20}
                 className='field-btn_arrow'
               />
             </button>
@@ -138,7 +141,6 @@ const Contact = () => {
         </div>
       </div>
 
-      {/* Modal */}
       {showModal && (
         <div className='fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50'>
           <div className='bg-white p-6 rounded-lg shadow-lg w-96 text-center'>

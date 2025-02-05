@@ -1,4 +1,5 @@
 import { clientReviews } from '../constants'
+import Image from 'next/image'
 
 const Clients = () => {
   return (
@@ -14,7 +15,13 @@ const Clients = () => {
             </div>
             <div className='client-content'>
               <div className='flex gap-3'>
-                <img src={img} alt={name} className='w-12 h-12 rounded-full' />
+                <Image
+                  src={img}
+                  alt={name}
+                  width={48}
+                  height={48}
+                  className='w-12 h-12 rounded-full'
+                />
                 <div className='flex flex-col'>
                   <p className='font-semibold text-gray-300'>{name}</p>
                   <p className='text-gray-500'>{position}</p>
@@ -22,10 +29,12 @@ const Clients = () => {
               </div>
               <div className='flex self-end items-center gap-2'>
                 {Array.from({ length: 5 }).map((_, index) => (
-                  <img
+                  <Image
                     key={index}
                     src='/assets/star.png'
                     alt='stars'
+                    width={20}
+                    height={20}
                     className='w-5 h-5'
                   />
                 ))}
