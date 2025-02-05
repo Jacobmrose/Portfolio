@@ -1,17 +1,14 @@
 'use client'
+
 import dynamic from 'next/dynamic'
 import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
 import Button from '../components/Button'
 
 const About = () => {
-  // Dynamically import Globe with SSR disabled
   const Globe = dynamic(() => import('react-globe.gl'), { ssr: false })
 
-  // State to track if the component is being rendered on the client
   const [isClient, setIsClient] = useState(false)
-
-  // Ensure this runs only after the component mounts
   useEffect(() => {
     setIsClient(typeof window !== 'undefined')
   }, [])
@@ -68,11 +65,10 @@ const About = () => {
           </div>
         </div>
 
-        {/* Third Section with Globe and Lightbulb */}
+        {/* Third Section with Globe */}
         <div className='col-span-1 xl:row-span-4'>
           <div className='grid-container'>
             <div className='rounded-3xl w-full sm:h-[326px] h-fit flex flex-col justify-center items-center'>
-              {/* Render the Globe only if running on the client */}
               {isClient && (
                 <Globe
                   height={326}
@@ -80,9 +76,7 @@ const About = () => {
                   backgroundColor='rgba(0, 0, 0, 0)'
                   showAtmosphere
                   showGraticules
-                  globeImageUrl={
-                    '//unpkg.com/three-globe/example/img/earth-night.jpg'
-                  }
+                  globeImageUrl='//unpkg.com/three-globe/example/img/earth-night.jpg'
                   bumpImageUrl='//unpkg.com/three-globe/example/img/earth-topology.png'
                   labelsData={[
                     {
@@ -90,10 +84,10 @@ const About = () => {
                       lng: -82, // Longitude of your location
                       text: "I'm here",
                       color: 'white',
-                      size: 2, // Adjust size here for larger text
+                      size: 2, // Ensure size is part of the object
                     },
                   ]}
-                  labelSize={(d: any) => d.size}
+                  labelSize={(d) => (d as { size: number }).size} // Type assertion
                 />
               )}
             </div>
@@ -114,11 +108,15 @@ const About = () => {
             </div>
           </div>
         </div>
+
+        {/* Fourth Section */}
         <div className='xl:col-span-2 xl:row-span-3'>
           <div className='grid-container text-center'>
-            <img
+            <Image
               src='/assets/grid3.png'
               alt='grid-3'
+              width={500}
+              height={266}
               className='w-full sm:h-[266px] h-fit object-contain'
             />
             <div>
@@ -135,6 +133,8 @@ const About = () => {
             </div>
           </div>
         </div>
+
+        {/* Fifth Section */}
         <div className='xl:col-span-1 xl:row-span-2'>
           <div className='grid-container'>
             <Image
@@ -148,7 +148,7 @@ const About = () => {
               <p className='grid-subtext text-center'>Email me</p>
               <div className='copy-container' onClick={handleCopy}>
                 <Image
-                  src={hasCopied ? 'assets/tick.svg' : 'assets/copy.svg'}
+                  src={hasCopied ? '/assets/tick.svg' : '/assets/copy.svg'}
                   alt='copy'
                   width={24}
                   height={24}

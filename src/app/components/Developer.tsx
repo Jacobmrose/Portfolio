@@ -24,7 +24,7 @@ const Developer: React.FC<DeveloperProps> = ({
 
   const { scene } = useGLTF('/models/animations/developer.glb')
   const clone = useMemo(() => SkeletonUtils.clone(scene), [scene])
-  const { nodes, materials } = useGraph(clone) as GLTFResult
+  const { nodes } = useGraph(clone) as GLTFResult
 
   const { animations: idleAnimation } = useFBX('/models/animations/idle.fbx')
   const { animations: saluteAnimation } = useFBX(
