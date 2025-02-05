@@ -19,7 +19,13 @@ export default function DemoComputer(props: DemoComputerProps) {
   ) as unknown as GLTFModel
 
   const txt = useVideoTexture(
-    props.texture ? props.texture : '/textures/project/project1.mp4'
+    props.texture ? props.texture : '/textures/project/project1.mp4',
+    {
+      muted: true,
+      autoplay: true,
+      loop: true,
+      playsInline: true,
+    }
   )
 
   useEffect(() => {
